@@ -5,6 +5,7 @@
 
 # Application dependencies
 # These dependencies should be fixed in future
-pycrypto>=2.6.1
+#pycrypto>=2.6.1
+pycryptodome>=3.9.0
 reportlab>=3.5.46
 Pillow>=6.2.2

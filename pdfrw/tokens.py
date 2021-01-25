@@ -150,7 +150,7 @@ class PdfTokens(object):
             else:
                 if self.strip_comments:
                     break
-                raise StopIteration
+                return
 
     def __init__(self, fdata, startloc=0, strip_comments=True, verbose=True):
         self.fdata = fdata

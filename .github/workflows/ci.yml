@@ -16,6 +16,7 @@ jobs:
     env:
       OS: ${{ matrix.os }}
       PYTHON: ${{ matrix.python-version }}
+      PYTHONIOENCODING: utf-8
       PIP_DOWNLOAD_CACHE: ${{ github.workspace }}/../.pip_download_cache
     strategy:
       fail-fast: true
@@ -24,9 +25,15 @@ jobs:
         python-version: [3.6, 3.7, 3.8, 3.9]
 
     steps:
+    - name: Set git crlf/eol
+      run: |
+        git config --global core.autocrlf false
+        git config --global core.eol lf
+
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+        submodules: true
 
     - uses: actions/setup-python@v2
       with:
@@ -59,6 +66,9 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: true
+
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
