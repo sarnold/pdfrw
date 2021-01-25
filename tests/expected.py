@@ -12,6 +12,7 @@
 '''
 
 import os
+import collections.abc as collections
 from pdfrw.py23_diffs import convert_load
 from collections import defaultdict
 

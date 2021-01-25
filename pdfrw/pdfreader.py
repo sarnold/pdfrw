@@ -12,6 +12,7 @@ of the object.
 '''
 import gc
 import binascii
+import collections.abc as collections
 import itertools
 
 from collections import defaultdict
