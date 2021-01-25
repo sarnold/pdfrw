@@ -12,7 +12,7 @@
 '''
 
 import os
-import collections
+import collections.abc as collections
 from pdfrw.py23_diffs import convert_load
 
 root_dir = os.path.dirname(__file__)
