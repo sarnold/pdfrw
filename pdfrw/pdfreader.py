@@ -12,8 +12,9 @@ of the object.
 '''
 import gc
 import binascii
-import collections
 import itertools
+
+from collections import defaultdict
 
 from .errors import PdfParseError, log
 from .tokens import PdfTokens
@@ -340,7 +341,7 @@ class PdfReader(PdfDict):
 
     def parse_xref_stream(self, source, int=int, range=range,
                           enumerate=enumerate, islice=itertools.islice,
-                          defaultdict=collections.defaultdict,
+                          defaultdict=defaultdict,
                           hexlify=binascii.hexlify):
         ''' Parse (one of) the cross-reference file section(s)
         '''
