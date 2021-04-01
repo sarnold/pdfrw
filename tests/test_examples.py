@@ -109,7 +109,8 @@ class TestOnePdf(unittest.TestCase):
             if expects:
                 if len(expects) == 1:
                     expects, = expects
-                    self.assertEqual(hash, expects, '{} file does not have the expected MD5 hash'.format(dstf))
+                    assert_error_msg = '{} file does not have the expected MD5 hash'.format(dstf)
+                    self.assertEqual(hash, expects, assert_error_msg)
                 else:
                     self.assertIn(hash, expects)
                 result = 'pass'
